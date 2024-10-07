@@ -1,0 +1,46 @@
+# Cert-Manager Service Account and Role Configuration for EKS
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: cert-manager
+  namespace: kube-system
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::026090551830:role/cert-manager
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: cert-manager-role
+  namespace: kube-system
+rules:
+  - apiGroups:
+      - cert-manager.io
+    resources:
+      - certificates
+      - issuers
+      - clusterissuers
+      - certificateorders
+      - challenges
+    verbs:
+      - get
+      - list
+      - watch
+      - create
+      - update
+      - delete
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: cert-manager-role-binding
+  namespace: kube-system
+subjects:
+  - kind: ServiceAccount
+    name: cert-manager
+    namespace: kube-system
+roleRef:
+  kind: Role
+  name: cert-manager-role
+  apiGroup: rbac.authorization.k8s.io
+

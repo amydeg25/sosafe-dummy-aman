@@ -1,0 +1,15 @@
+# Service Definition for sosafe-dummy Application
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: sosafe-dummy-ns
+  name: sosafe-dummy-svc
+spec:
+  ports:
+    - port: 80
+      targetPort: 8000
+      protocol: TCP
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: sosafe-dummy
+

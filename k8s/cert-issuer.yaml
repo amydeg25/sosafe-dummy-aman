@@ -1,0 +1,23 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-production
+  namespace: cert-manager
+spec:
+  acme:
+    # The ACME server URL for Let's Encrypt production
+    server: https://acme-v02.api.letsencrypt.org/directory
+    email: aman15doad@gmail.com # Your email address for notifications
+    privateKeySecretRef:
+      name: letsencrypt-production
+    solvers:
+    - dns01:
+        route53:
+          hostedZoneID: Z0267806O1ZEA5AYQN1A
+          region: eu-central-1
+      selector:
+        dnsZones:
+        - "jklikl.xyz"
+    - http01:
+        ingress:
+          class: nginx

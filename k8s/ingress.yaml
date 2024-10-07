@@ -1,0 +1,28 @@
+# Ingress Definition for sosafe-dummy Application
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: sosafe-dummy-ns
+  name: ingress-sosafe-dummy
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+  labels:
+    app: sosafe-dummy
+spec:
+  ingressClassName: alb
+  rules:
+    - http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: sosafe-dummy-svc    # Backend service to route traffic to
+              port:
+                number: 80
+  tls:                                   # Enable TLS configuration
+    - hosts:
+        - sosafe-dummy.jklikl.xyz        # Hostname for the TLS configuration
+      secretName: sosafe-dummy-tls       # Name of the secret containing the TLS certificate

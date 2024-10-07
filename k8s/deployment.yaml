@@ -1,0 +1,36 @@
+# Namespace Definition for Application
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: sosafe-dummy-ns
+
+---
+# Deployment Definition for Application
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: sosafe-dummy-ns
+  name: sosafe-dummy
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: sosafe-dummy
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: sosafe-dummy
+    spec:
+      containers:
+      - image: bastianbretagne/sosafe-dummy-app:0.0.2
+        imagePullPolicy: Always
+        name: sosafe-dummy
+        ports:
+        - containerPort: 8000
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
