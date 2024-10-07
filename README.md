@@ -1,8 +1,8 @@
-Terraform Datadog EKS
+# Terraform Datadog EKS
 
 This repository provides Terraform scripts to set up an Amazon EKS (Elastic Kubernetes Service) cluster, deploy a sample application, and integrate Datadog for monitoring and observability.
 
-Features
+# Features
 
 Provision an EKS cluster using Terraform.
 Deploy a sample application to the EKS cluster.
