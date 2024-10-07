@@ -15,6 +15,12 @@ spec:
         route53:
           hostedZoneID: Z0267806O1ZEA5AYQN1A
           region: eu-central-1
+          accessKeyIDSecretRef:
+            name: cert-manager-aws-credentials
+            key: aws-access-key-id
+          secretAccessKeySecretRef:
+            name: cert-manager-aws-credentials
+            key: aws-secret-access-key
       selector:
         dnsZones:
         - "jklikl.xyz"
