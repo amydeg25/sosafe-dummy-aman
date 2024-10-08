@@ -93,6 +93,8 @@ https://github.com/sosafe-site-reliability-engineering/dummy-app/
 6. Would have also created a test user with limited permissions to access the cluster in prod setup.
 7. Image provided have been used directly, in prod setup it would be pushed to the public repo and used in the manifests.
 8. Also in CI/CD, I would have configured SonarQube for Code Analysis, Trivy for Image Scans and Kyverno for resources like NameSpace, Pod and Cluster related policies.
+9. Am also using here just the main branch, but in prod we would add a proper CICD flow with multiple branches like "dev" , "staging".
+10. Also for Remote Backend, we assume that we already have a S3 bucket setup in AWS.
 
 ## Monitoring with Datadog
 
