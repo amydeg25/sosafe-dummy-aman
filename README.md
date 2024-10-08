@@ -1,6 +1,6 @@
 # Terraform Datadog EKS
 
-This repository provides Terraform configurations for deploying an Amazon EKS (Elastic Kubernetes Service) cluster, deploys a sample application integrated with Datadog for monitoring and observability.
+This repository provides Terraform configurations for deploying an Amazon EKS (Elastic Kubernetes Service) cluster, simple bash script which uses some pre-deploy packages along with kubernetes manifest that deploys a sample application integrated with Datadog for monitoring and observability.
 
 ## Table of Contents
 
@@ -31,7 +31,7 @@ Before you begin, ensure you have the following installed:
    git clone https://github.com/amydeg25/terraform-datadog-eks.git
    cd terraform-datadog-eks
    ```
-   
+
 2. Configure your AWS credentials and set them as environment variables
 
   ```bash
@@ -42,6 +42,15 @@ Before you begin, ensure you have the following installed:
   ```
 
 ## Stack
+
+1. Terraform for Infrastructure-As-Code(IAC)
+2. AWS EKS managed Cluster to deploy a dummy app: 
+https://github.com/sosafe-site-reliability-engineering/dummy-app/ 
+3. The whole setup is deployed within a VPC, with ALB Load Balancer in Public Subnet and Nodes and Application in a Private Subnet.
+4. External DNS is configured for automatic scanning of ingresses and update the records in Route 53.
+5. Cert Manager is used for the automatic TLS configuration for the app.
+6. Domain Filter used here is jklikl.xyz, my test domain in GoDaddy using AWS Name Servers.
+
 
 
 
