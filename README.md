@@ -6,11 +6,13 @@ This repository provides Terraform configurations for deploying an Amazon EKS (E
 
 - [Prerequisites](#prerequisites)
 - [Getting Started](#getting-started)
+- [Assumptions](assumptions)
+- [Stack](stack)
 - [Deployment](#deployment)
 - [Configuration](#configuration)
 - [Monitoring with Datadog](#monitoring-with-datadog)
 - [Cleanup](#cleanup)
-- [License](#license)
+
 
 ## Prerequisites
 
@@ -30,16 +32,44 @@ Before you begin, ensure you have the following installed:
 
 2. Configure your AWS credentials and set them as environment variables
 
-```bash
-aws configure
-export AWS_ACCESS_KEY_ID="your_aws_access_key_id"
-export AWS_SECRET_ACCESS_KEY="your_aws_secret_access_key"
+  ```bash
+  aws configure
+  export AWS_ACCESS_KEY_ID="your_aws_access_key_id"
+  export AWS_SECRET_ACCESS_KEY="your_aws_secret_access_key"
 
-## Deployment 
+## Assumptions
+
+
+## Stack
+
+
+##  Deployment 
 To deploy the EKS cluster and Datadog integration, follow these steps:
 
 1. Initialize Terraform:
 
-```bash
-terraform init
+  ```bash
+  terraform init
+
+2. Plan the deployment to see what resources will be created:
+  ```bash
+  terraform plan 
+
+3. Apply the Terraform configuration to create the resources:
+  
+  ```bash
+  terraform apply 
+
+4. After deployment, you can access the EKS cluster with:
+  
+  ```bash
+  aws eks --region <your-region> update-kubeconfig --name <your-cluster-name>
+
+## Configuration
+
+## Monitoring with Datadog
+
+## Cleanup 
+
+
 
