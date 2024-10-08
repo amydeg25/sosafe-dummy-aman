@@ -21,6 +21,7 @@ Before you begin, ensure you have the following installed:
 - [Terraform](https://www.terraform.io/downloads.html) 
 - [AWS CLI](https://aws.amazon.com/cli/)
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) 
+- [kubeseal](https://docs.coreweave.com/coreweave-kubernetes/sealed-secrets)
 
 ## Getting Started
 
@@ -38,38 +39,6 @@ Before you begin, ensure you have the following installed:
   export AWS_SECRET_ACCESS_KEY="your_aws_secret_access_key"
 
 ## Assumptions
-
-
-## Stack
-
-
-##  Deployment 
-To deploy the EKS cluster and Datadog integration, follow these steps:
-
-1. Initialize Terraform:
-
-  ```bash
-  terraform init
-
-2. Plan the deployment to see what resources will be created:
-  ```bash
-  terraform plan 
-
-3. Apply the Terraform configuration to create the resources:
-  
-  ```bash
-  terraform apply 
-
-4. After deployment, you can access the EKS cluster with:
-  
-  ```bash
-  aws eks --region <your-region> update-kubeconfig --name <your-cluster-name>
-
-## Configuration
-
-## Monitoring with Datadog
-
-## Cleanup 
 
 
 
