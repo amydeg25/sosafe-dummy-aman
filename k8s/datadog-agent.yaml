@@ -5,7 +5,7 @@ metadata:
   name: datadog
 spec:
   global:
-    clusterName: aman-final
+    clusterName: aman-final # update the name of the cluster
     site: datadoghq.eu
     credentials:
       apiSecret:
