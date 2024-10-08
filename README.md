@@ -87,11 +87,11 @@ https://github.com/sosafe-site-reliability-engineering/dummy-app/
 1. As this setup is for assignment so I have used SPOT for capacity for cost efficiency.
 2. As a minimal viable test product, I have not used CI/CD approach using (Github Actions/Flux).
 3. Tried using latest versions where possible(have used a bit older only for stability but have also added the upgrade comments for them) with Security practices using locals, variables and also sealed secrets for kubernetes secrets.
-4. Cluster Autoscaler/HPA has not been configured as we are assuming a test setup without huge load.
-5. Resources (Requsts/Limits) are not used for all the services which are recommended for prod.
+4. Cluster AutoScaler/HPA has not been configured as we are assuming a test setup without huge load.
+5. Resources (Requests/Limits) are not used for all the services which are recommended for prod.
 6. Would have also created a test user with limited permissions to access the cluster in prod setup.
 7. Image provided have been used directly, in prod setup it would be pushed to the public repo and used in the manifests.
-8. Also in CICD, I would have configured Sonar Qube for Code Analysis, Trivy for Image Scans and Kyverno for resources like NameSpace, Pod and Cluster related policies.
+8. Also in CI/CD, I would have configured SonarQube for Code Analysis, Trivy for Image Scans and Kyverno for resources like NameSpace, Pod and Cluster related policies.
 
 ## Monitoring with Datadog
 
