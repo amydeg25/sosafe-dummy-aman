@@ -81,7 +81,7 @@ https://github.com/sosafe-site-reliability-engineering/dummy-app/
   ```bash
   kubectl get all -A
   ``` 
-5. For Datadog, follow the `Datadog integration guide` for EKS to set up your Datadog account and APIkey.
+5. For Datadog, follow the [Datadog integration guide](https://docs.datadoghq.com/getting_started/integrations/) for EKS to set up your Datadog account and APIkey.
 
 ## Assumptions
 
