@@ -11,6 +11,7 @@ This repository provides Terraform configurations for deploying an Amazon EKS (E
 - [Assumptions](assumptions)
 - [Monitoring with Datadog](#monitoring-with-datadog)
 - [Cleanup](#cleanup)
+- [Duration](#duration)
 
 
 ## Prerequisites
@@ -103,3 +104,7 @@ Visit the Datadog dashboard to view metrics, configure monitors and alerting.
   ```bash 
   terraform destroy 
   ```
+
+## Duration: 
+
+Will update this once I setup the project on development environment.
