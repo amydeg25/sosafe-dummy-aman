@@ -16,10 +16,9 @@ This repository provides Terraform configurations for deploying an Amazon EKS (E
 
 Before you begin, ensure you have the following installed:
 
-- [Terraform](https://www.terraform.io/downloads.html) (version X.X or later)
-- [AWS CLI](https://aws.amazon.com/cli/) (version X.X or later)
-- [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) (version X.X or later)
-- [Datadog Agent](https://docs.datadoghq.com/agent/) (optional for agent installation)
+- [Terraform](https://www.terraform.io/downloads.html) 
+- [AWS CLI](https://aws.amazon.com/cli/)
+- [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) 
 
 ## Getting Started
 
@@ -28,3 +27,14 @@ Before you begin, ensure you have the following installed:
    ```bash
    git clone https://github.com/amydeg25/terraform-datadog-eks.git
    cd terraform-datadog-eks
+
+2. Configure your AWS credentials and set them as environment variables.
+aws configure
+export AWS_ACCESS_KEY_ID="your_aws_access_key_id"
+export AWS_SECRET_ACCESS_KEY="your_aws_secret_access_key"
+
+Deployment
+To deploy the EKS cluster and Datadog integration, follow these steps:
+
+Initialize Terraform:
+terraform init
