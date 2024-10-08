@@ -27,7 +27,7 @@ Before you begin, ensure you have the following installed:
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/amydeg25/terraform-datadog-eks.git
+   git clone https://github.com/amydeg25/sosafe-dummy-aman.git
    cd terraform-datadog-eks
    ```
 
