@@ -1,7 +1,7 @@
 # EKS Module Configuration
 module "eks" {
   source                         = "terraform-aws-modules/eks/aws"
-  version                        = "20.24.2"
+  version                        = "19.15.1" # Update to 20.24.2 if deprecation warnings
   cluster_name                   = var.cluster_name
   cluster_endpoint_public_access = true
   cluster_version                = var.kubernetes_version

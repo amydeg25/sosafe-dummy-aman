@@ -24,7 +24,7 @@ spec:
         ad.datadoghq.com/enabled: "true"
         ad.datadoghq.com/sosafe-dummy.prometheus.scrape: "true"
         ad.datadoghq.com/sosafe-dummy.prometheus.endpoint: "/metrics"
-        ad.datadoghq.com/sosafe-dummy.prometheus.port: "80"
+        ad.datadoghq.com/sosafe-dummy.prometheus.port: "8000"
         ad.datadoghq.com/sosafe-dummy.prometheus.namespace: "sosafe-dummy-ns"
     spec:
       containers:

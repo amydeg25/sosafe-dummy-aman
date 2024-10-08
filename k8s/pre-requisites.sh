@@ -19,17 +19,12 @@ kubectl create secret generic datadog-secret --from-literal api-key=$DATADOG_API
 # Create namespaces if they do not exist
 kubectl create ns cert-manager --dry-run=client -o yaml | kubectl apply -f -
 
+
 # Create AWS credentials secrets for external-dns
 kubectl create secret generic external-dns-aws-credentials \
     --from-literal=aws-access-key-id=$AWS_ACCESS_KEY_ID \
     --from-literal=aws-secret-access-key=$AWS_SECRET_ACCESS_KEY \
     -n kube-system
-
-# Create AWS credentials secrets for cert-manager
-kubectl create secret generic cert-manager-aws-credentials \
-    --from-literal=aws-access-key-id=$AWS_ACCESS_KEY_ID \
-    --from-literal=aws-secret-access-key=$AWS_SECRET_ACCESS_KEY \
-    -n cert-manager
 
 # Apply Cert-Manager CustomResourceDefinitions and install Cert-Manager
 kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/$CERT_MANAGER_VERSION/cert-manager.crds.yaml
