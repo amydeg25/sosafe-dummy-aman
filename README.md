@@ -28,13 +28,18 @@ Before you begin, ensure you have the following installed:
    git clone https://github.com/amydeg25/terraform-datadog-eks.git
    cd terraform-datadog-eks
 
-2. Configure your AWS credentials and set them as environment variables.
+2. Configure your AWS credentials and set them as environment variables
+
+```bash
 aws configure
 export AWS_ACCESS_KEY_ID="your_aws_access_key_id"
 export AWS_SECRET_ACCESS_KEY="your_aws_secret_access_key"
 
-Deployment
+## Deployment 
 To deploy the EKS cluster and Datadog integration, follow these steps:
 
-Initialize Terraform:
+1. Initialize Terraform:
+
+```bash
 terraform init
+
